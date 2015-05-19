@@ -1,0 +1,17 @@
+extends ./base.jade
+block append style
+    link(rel="stylesheet", type="text/css", href="/assets/style.css")
+block body
+  section#login
+    img#mlogo(src="/assets/img/Log.png", alt="logo")
+    form#loginForm(class="mainForm", name="loginForm", action="/login", method="POST")
+      h2.formTitle Login 
+      input.LogInpTxt(type="text", name="username", placeholder="username")
+      input.LogInpTxt(type="password", name="pass", placeholder="password")
+      #errorLogin
+        p#loginErrMessage Wrong username or password
+      a#loginSubmit(class="formSubmit", href="#") Sign In
+      h4 or
+      a(href="/signup" class="createAccountlnk") Sign up
+block scripts
+    script(src="/assets/client.js")

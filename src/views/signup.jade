@@ -1,0 +1,21 @@
+extends ./base.jade
+block append style
+    link(rel="stylesheet", type="text/css", href="/assets/style.css")
+block body
+  section#signup
+    img#mlogo(src="/assets/img/Log.png", alt="logo")
+    form#signupForm(class="mainForm", name="signupForm", action="/signup", method="POST")
+      h2.formTitle Sign Up
+      label.signLabelTxt(for='username') Create Username: 
+      input.signInpTxt(type='text', name='username')
+      label.signLabelTxt(for='pass') Create Password: 
+      input.signInpTxt(type='password', name='pass')
+      label.signLabelTxt(for='pass2') Confirm Password: 
+      input.signInpTxt(type='password', name='pass2')
+      #errorLogin
+        p#loginErrMessage
+      a#signupSubmit.formSubmit(href='#') Create Account
+      a.logbtn(href='/login') Login
+
+block scripts
+        script(src="/assets/client.js")

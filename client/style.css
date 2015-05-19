@@ -1,0 +1,516 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+	background: rgb(189, 191, 203);
+	/*font-family: 'Gill Sans MT', sans-serif;*/
+	font-family: 'Niramla UI', sans-serif;
+}
+#mlogo{
+  height: auto;
+  width: 80%;
+  padding-left: 11%;
+  border-radius: 8px;
+  margin: auto;
+}
+
+#logo {
+    height: 80px;
+    width: 500px;
+    padding-top: 10px;
+    float:left;
+    border-radius: 8px;
+    padding-left: 10px;
+}
+/*#logo {
+	float: left;
+	border-radius: 8px;
+	padding-left: 20px;
+	color: rgb(235, 235, 235);
+	font-size: 2em;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-family: 'Gill Sans MT', sans-serif;
+	
+}*/
+#login, #signup{
+	padding-top: 50px;
+}
+nav {
+    width: 100%;
+	height: 100px;
+	background-color: #4161B5;
+	/*background-image: url("img/awesome.jpg");*/
+	border-bottom: solid 3px black;
+	
+}
+nav li{
+	display: inline;
+}
+/*
+nav:nth-child(1) {
+    padding-left: 25px;
+}
+*/
+
+.navlink {
+    padding: 5px;
+	padding-top: 44px;
+	padding-left: 20px;
+	font-size: 1.3em;
+	float: right;
+}
+
+.navlink a, .navlink a:link, .navlink a:visited, .navlink a:hover, .navlink a:active {
+    color: white;
+    text-decoration: none;
+    padding: 20px;
+	border-radius: 4px;
+	/*background-color: black;*/
+    transition: background-color 0.4s ease;
+}
+
+.navlink a:hover {
+	color: #DFDFDF;
+}
+
+
+
+
+
+/*login/ signup page */
+.mainForm {
+	padding: 3px 20px 30px 20px;
+	width: 350px;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 1.2em;
+	background: none repeat scroll 0% 0% #E7E7E7;
+	border-radius: 6px;
+	box-shadow: 3px 3px 8px #A4A4A4;
+}
+ .formTitle{
+	font-size: 25px;
+	font-weight: normal;
+	text-align:center;
+}
+.signLabelTxt{
+	display: inline-block;
+	width: 75%;
+	text-align: left;
+	font-size: 17px;
+}
+.signInpTxt {
+  font-size: 1.1em;
+  height: 40px;
+  border-radius: 6px;
+  display: block;
+  margin: auto auto 20px auto;
+}
+.LogInpTxt{
+	text-align: center;
+	font-size: 1.1em;
+	height: 50px;
+	border-radius: 6px;
+	margin-bottom: 40px;
+}
+/*
+.LogInpTxt:focus {
+    outline: none;
+    box-shadow: 0px 0px 1px 1px #55acee;
+}
+*/
+
+.mainForm h3 {
+    text-align: center;
+}
+ /* "or" in Login form */ 
+.mainForm h4{
+	margin:20px;
+}
+.createAccountlnk{
+	color: rgb(74, 74, 74);
+	font-size: 1.2em;
+}
+.logbtn{
+	text-align: right;
+	color: rgb(74, 74, 74);
+	display: block;
+	padding-top: 30px;
+}
+
+.formSubmit {
+	transition: background-color 0.4s ease;
+	display: block;
+	text-align: center;
+	margin: 0 auto;
+	/*margin-top: 10px;*/
+	font-size: 1.2em;
+	width: 290px;
+	background-color: #4161B5;
+	border-radius: 2px;
+	padding: 10px 0px;
+	color: white;
+	text-decoration: none;
+}
+ 
+ .formSubmit:link, .formSubmit:visited, .formSubmit:hover, .formSubmit:active {
+    color: white;
+}
+
+.formSubmit:hover, .formSubmit2:hover{
+    transition: background-color 0.4s ease;
+    background-color: #475C94;
+}
+#errorLogin {
+    display:none;
+	overflow: hidden;
+    text-align: center;
+    position: relative;
+    bottom: 20px;
+}
+#loginErrMessage{
+	font-size: 16px;
+	font-weight: bold;
+	color: rgb(230, 72, 55);
+	font-style: italic;
+}
+
+
+
+
+/*  adding payments page */
+.payForm {
+	width: 100%;
+	margin: auto;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	/*background-color: rgb(51, 50, 74);*/
+	background-color: rgb(50, 62, 74);
+	border-radius: 0px;
+	text-align: center;
+	margin-bottom: 60px;
+}
+.inp{
+	display: inline;
+}
+.payForm label {
+	width: 5%;
+	margin-left: 15px;
+	font-size: 1.2em;
+	float: center;
+	color: white;
+}
+.PosNeg {
+  width: 30px;
+  margin-right: 20px;
+}
+/*
+.payForm input[type=text] {
+    float: center;
+	width: 20%;
+}*/
+.payForm #payItem[type=text], .payForm #priceItem[type=text] {
+    float: center;
+	width: 20%;
+}
+
+.paymentsFormSubmit {
+	transition: background-color 0.4s ease;
+	display: inline;
+	font-size: 1em;
+	width: 20%;
+	background-color: #62729B;
+	border-radius: 2px;
+	color: white;
+	text-decoration: none;
+	margin-left: 6%;
+	padding: 8px;
+}
+.paymentsFormSubmit2 {
+	transition: background-color 0.4s ease;
+	display: inline;
+	font-size: 1em;
+	width: 20%;
+	background-color: #706F91;
+	border-radius: 2px;
+	color: white;
+	text-decoration: none;
+	margin-left: 6%;
+	padding: 8px;
+}
+
+.paymentsFormSubmit:link, .paymentsFormSubmit:visited, .paymentsFormSubmit:hover, .paymentsFormSubmit:active {
+    color: white;
+}
+
+.paymentsFormSubmit:hover {
+    transition: background-color 0.2s ease;
+    /*background-color: #7E8189;*/
+	background-color: #505E81;
+}
+
+
+
+
+#errorPayments {
+    display:none;
+    /*top: 250px;
+    width: 250px;
+    height: 650px;
+    position: absolute;
+    z-index: 200;
+    right: 0px;
+    overflow: hidden;
+	*/
+	width: 100%;
+	height: 50px;
+	/* position: absolute; */
+	z-index: 200;
+	overflow: hidden;
+}
+#speech {
+    height: 120px;
+    width: 250px;
+    z-index:300;
+}
+
+#errorMessage {
+	font-size: 1.2em;
+	font-weight: bold;
+	color: white;
+	font-style: italic;
+}
+#payments {
+	width: 95%;
+	min-width: 400px;
+	border-radius: 4px;
+	margin: 0 auto;
+}
+
+.onePay {
+	width: 100%;
+	margin: 0 auto;
+	margin-bottom: 5px;
+	border-radius: 4px;
+	background-color: #EBEBEB;
+	/* background-color: rgb(222, 222, 222); */
+	min-height: 60px;
+	overflow: hidden;
+	display: inline-flex;
+}
+
+.onePay:hover {
+    transition: border-color 0.2s ease-out;
+    /*border-color: rgba(255,255,255, 0.8);*/
+    transition: background-color 2.6s ease-out;
+    background-color: rgb(222, 222, 222);
+}
+h3.noPay {
+    width: 400px;
+    font-size: 1.5em;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 18px;
+}
+
+h3.payItem {
+	width: 80%;
+	height: 23px;
+	text-align: left;
+	padding-left: 20px;
+}
+h3.title{
+	text-align: center;
+	font-size: 1.6em;
+	color: black;
+	font-weight: bold;
+	text-decoration: underline;
+}
+h3.fastTitle{
+	text-align: center;
+	font-size: 1.6em;
+	color: white;
+	font-weight: bold;
+	text-decoration: underline;
+}
+a.fastLink{
+	text-decoration:none;
+	color: black;
+}
+h3.typeItem {
+  width: 5%;
+}
+
+h3.priceItem {
+	width: 20%;
+}
+h3.priceItemPos {
+	width: 20%;
+	color: rgb(60, 153, 60);
+}
+h3.priceItemNeg {
+	width: 20%;
+	color: #EC5E4D;
+}
+/*
+h3.mTotal{
+	width: 15%;
+}
+*/
+#menu-icon {
+/* hamburger icon - do not show until width <= 600px */
+	display: hidden;
+	width: 40px;
+	height: 40px;
+}
+
+
+/*MEDIA QUERIES */
+
+/*other phones*/
+@media screen and (max-width : 320px){
+	
+	#logo{
+		font-size: 18px;
+		text-align: center;
+		height: 54px;
+		width: 234px;
+		padding-top: 23px;
+	}
+
+}
+/* iPhone 6 */
+@media screen and (max-width : 768px){
+	
+	/*hamburger menu */
+	#menu-icon {
+	  display: inline-block; /*makes it visible*/
+	  background-color: rgb(235, 235, 235);
+	  position: relative;
+	  top: 30px;
+	  right: 20px;
+	  border-radius: 3px;
+	  float: right;
+	}
+	.navLink{
+		float: left;
+	}
+	/*making 3 bars */
+	#menu-icon:after{
+		content: "";
+		width: 2em;
+		height: 0.2em;
+		border-top: 0.475em double #000;
+		border-bottom: 0.15em solid #000;
+		bottom: 12px;
+		left: 5px;
+		position: absolute;
+	}
+	/*drop down menu*/
+	nav ul, nav:active ul{
+	  display: none;
+	  /* border: 1px solid black; */
+	  font-size: 15px;
+	  text-decoration: none;
+	  position: absolute;
+	  top: 54px;
+	  right: 20px;
+	  z-index: 100;
+	  background-color: #808080;
+	  padding: 10px;
+	  opacity: .9;
+	  box-shadow: 3px 3px 8px #808080;
+	}
+	nav li{
+		text-align: left;
+		width: 100%;
+		/*padding: 5px 0;*/
+		margin: 0;
+		color: white;
+		display: block;
+	}
+	.navLinks:hover ul{
+		display: block;
+	}
+	#logo{
+		height: 66px;
+		width: 300px;
+		padding-top: 15px;
+	}
+
+}
+/*iPhone 6*/
+@media (min-width : 321px) and (max-width : 375px){
+	#logo{
+		font-size: 18px;
+		text-align: center;
+		height: 54px;
+		width: 234px;
+		padding-top: 23px;
+	}
+}
+
+/*Ipad*/
+@media (min-width:768px) and (max-width:900px){
+	#logo{
+			width: 400px;
+			height: 69px;
+			margin-top: 4px;
+		}
+	
+}
+/*desktop*/
+@media (min-width:900px) and (max-width:1030px){
+
+}
+@media all and (max-width:1000px){
+	.navlink a, .navlink a:link, .navlink a:visited, .navlink a:hover, .navlink a:active{
+		padding:0;
+	}
+}
+/* Going from desktop to tablet/mobile*/
+@media all and (max-width:768px){
+	/*.payForm input[type=text] {
+		display: block;
+	}*/
+	 /*#logo{
+		height: 58px;
+		width: 300px;
+		padding-top: 20px;
+	 }*/
+	.inp{
+		display: block;
+	}
+	.mainForm{
+		background: none;
+		box-shadow: none;
+	}
+
+}
+
+@media all and (max-width:900px){
+	.inp{
+		display: block;
+		text-align: left;
+		padding: 10px;
+	}
+	.paymentsFormSubmit{
+		margin-left: 2%;
+	}
+	.payForm #payItem[type=text], .payForm #priceItem[type=text] {
+		float: center;
+		width: 50%;
+	}
+
+/*small tablets */
+@media (min-width:601px) and (max-width:768px){
+	#logo{
+			width: 400px;
+			height: 70px;
+			padding-top: 13px;
+		}
+		
+}

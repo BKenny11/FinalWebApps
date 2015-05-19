@@ -1,0 +1,63 @@
+extends ./base.jade
+block append style
+    link(rel="stylesheet", type="text/css", href="/assets/style.css")
+block body
+  nav
+   a(href='/login')
+     img#logo(src="/assets/img/Log.png", alt="logo")
+   .navLinks
+     a#menu-icon(href='#')
+     ul
+       li
+         .navlink
+           a(href='/logout') Log out
+       li
+         .navlink
+           a(href='/home') Add Payment
+  section#paymentsForm
+   form#payForm(class="payForm", name="payForm", action="/maker", method="POST")
+       div.inp
+         label(for='name') Item: 
+         input#payItem(type='text', name='name', placeholder='item name')
+       div.inp
+         label(for='price') Price: 
+         input.PosNeg(type='text', name='type', placeholder='(+/-)')
+         input#priceItem(type='text', name='price', placeholder='cost')
+       div.inp
+         a#paymentsFormSubmit(class="paymentsFormSubmit", href="#") Create Custom Item
+       #errorPayments
+         h3
+           span#errorMessage *All fields required!
+  h3.title Your Account
+  section#payments
+    if !payments || payments.length == 0
+        div.onePay
+            h3.noPay Currently No Payments!
+    else
+       div
+        - var totalPrice = 0
+        - var n = 0
+        while n < payments.length 
+            - var payment = payments[n]
+            if payment.type == "-"
+                - totalPrice -= payment.price
+                - n++
+            else
+                - totalPrice += payment.price
+                - n++
+        h3 #{"Total Payments: $" + totalPrice}
+        - var p = payments.length
+        while p > 0
+            div.onePay
+                - var pmt = payments[p-1]
+                h3.payItem Item: #{pmt.name}
+                if pmt.type == "-"
+                    h3.priceItemNeg Price: #{"$" + pmt.price}
+                else
+                    h3.priceItemPos Price: #{"$" + pmt.price}
+                - var fullDate = pmt.createdData.toString()
+                - var date = fullDate.substring(0,15)
+                h3.priceItem Date: #{date}
+            - p--
+block scripts
+        script(src="/assets/maker.js")

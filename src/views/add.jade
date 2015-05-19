@@ -1,0 +1,50 @@
+extends ./base.jade
+block append style
+    link(rel="stylesheet", type="text/css", href="/assets/style.css")
+block body
+  nav
+    a(href='/login')
+      img#logo(src='/assets/img/Log.png', alt='logo')
+    .navLinks
+      a#menu-icon(href='#')
+      ul
+        li
+          .navlink
+            a(href='/logout') Log out
+        li
+          .navlink
+            a(href='/maker') Account
+  section#paymentsForm
+    form#payForm(class="payForm", name="payForm", action="/maker", method="POST")
+       div.inp
+          label(for='name') Item: 
+          input#payItem(type='text', name='name', placeholder='item name')
+        div.inp
+          label(for='price') Price: 
+          input.PosNeg(type='text', name='type', placeholder='(+/-)')
+          input#priceItem(type='text', name='price', placeholder='cost')
+        div.inp
+          a#paymentsFormSubmit(class="paymentsFormSubmit", href="#") Create Custom Item
+        #errorPayments
+          h3
+            span#errorMessage *All fields required!
+  h3.title Select a Fast Access Payment
+  section#payments
+           a.fastLink(href="/bills") 
+            div.onePay
+                h3.payItem Pay Bills
+                h3.priceItem >
+           a.fastLink(href="/credit")
+            div.onePay
+                h3.payItem Make Credit Card Payment
+                h3.priceItem >
+           a.fastLink(href="/cash")
+            div.onePay
+                h3.payItem Received Cash
+                h3.priceItem >
+           a.fastLink(href="/payday")
+            div.onePay
+                h3.payItem Pay Day Deposit
+                h3.priceItem >
+block scripts
+        script(src="/assets/maker.js")
